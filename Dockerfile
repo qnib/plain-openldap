@@ -5,7 +5,7 @@ FROM qnib/uplain-init:14.04
 
 # install slapd in noninteractive mode
 RUN apt-get update \
- && apt-get install -y nmap vim \
+ && apt-get install -y nmap \
  && echo 'slapd/root_password password password' | debconf-set-selections \
  && echo 'slapd/root_password_again password password' | debconf-set-selections \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y slapd ldap-utils \
